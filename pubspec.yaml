@@ -1,5 +1,5 @@
 name: orbertron
-description: "My Flutter App"
+description: "Orbertron App"
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -17,6 +17,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Asset setup for logo image
+  # Asset setup for your logo
   assets:
     - assets/images/logo.png
