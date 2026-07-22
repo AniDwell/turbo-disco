@@ -17,6 +17,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-  # Asset setup for your logo
   assets:
     - assets/images/logo.png
