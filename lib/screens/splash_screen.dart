@@ -13,6 +13,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
+    // Navigates to HomeScreen after 3 seconds
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -23,23 +24,38 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            // Display Logo Image
+            Image.asset(
+              'assets/images/logo.png',
+              width: 160,
+              height: 160,
+              // Fallback icon if logo image fails to load
+              errorBuilder: (context, error, stackTrace) {
+                return const Icon(
+                  Icons.sports_esports,
+                  size: 100,
+                  color: Colors.cyanAccent,
+                );
+              },
+            ),
+            const SizedBox(height: 24),
+            const Text(
               'ORBERTRON',
               style: TextStyle(
-                fontSize: 36,
+                fontSize: 28,
                 fontWeight: FontWeight.bold,
                 color: Colors.cyanAccent,
-                letterSpacing: 3.0,
+                letterSpacing: 2.0,
               ),
             ),
-            SizedBox(height: 20),
-            CircularProgressIndicator(color: Colors.cyanAccent),
+            const SizedBox(height: 30),
+            const CircularProgressIndicator(color: Colors.cyanAccent),
           ],
         ),
       ),
